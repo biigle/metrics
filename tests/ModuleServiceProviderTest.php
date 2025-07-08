@@ -1,8 +1,8 @@
 <?php
 
-namespace Biigle\Tests\Modules\Module;
+namespace Biigle\Tests\Modules\Metrics;
 
-use Biigle\Modules\Module\ModuleServiceProvider;
+use Biigle\Modules\Metrics\ModuleServiceProvider;
 use TestCase;
 
 class ModuleServiceProviderTest extends TestCase

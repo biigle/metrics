@@ -11,7 +11,7 @@ export default defineConfig({
             publicDirectory: 'src',
             buildDirectory: 'public',
             input: [
-                'src/resources/assets/sass/main.scss',
+                // 'src/resources/assets/sass/main.scss',
                 'src/resources/assets/js/main.js',
             ],
             hotFile: 'hot',

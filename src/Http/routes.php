@@ -1,12 +1,7 @@
 <?php
 
-$router->get('quotes', [
-   'middleware' => 'auth',
-   'as'   => 'quotes',
-   'uses' => 'QuotesController@index',
-]);
-
-$router->get('quotes/new', [
-   'middleware' => 'auth',
-   'uses' => 'QuotesController@quote',
-]);
+// $router->post('api/v1/metrics', [
+//    'middleware' => 'auth',
+//    'as'   => 'quotes',
+//    'uses' => 'MetricsController@store',
+// ]);

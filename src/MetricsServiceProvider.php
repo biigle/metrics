@@ -1,12 +1,12 @@
 <?php
 
-namespace Biigle\Modules\Module;
+namespace Biigle\Modules\Metrics;
 
 use Biigle\Services\Modules;
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
 
-class ModuleServiceProvider extends ServiceProvider
+class MetricsServiceProvider extends ServiceProvider
 {
 
    /**
@@ -21,7 +21,7 @@ class ModuleServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'module');
 
         $router->group([
-            'namespace' => 'Biigle\Modules\Module\Http\Controllers',
+            'namespace' => 'Biigle\Modules\Metrics\Http\Controllers',
             'middleware' => 'web',
         ], function ($router) {
             require __DIR__.'/Http/routes.php';

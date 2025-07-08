@@ -1,10 +1,10 @@
 {
-  "name": "biigle-module",
+  "name": "biigle-metrics",
   "version": "0.0.1",
   "license": "GPL-3.0-only",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && php ../../../artisan vendor:publish --provider Biigle\\\\Modules\\\\Module\\\\ModuleServiceProvider --tag public --force",
+    "build": "vite build && php ../../../artisan vendor:publish --provider Biigle\\\\Modules\\\\Metrics\\\\MetricsServiceProvider --tag public --force",
     "lint": "eslint --ext .js,.vue --resolve-plugins-relative-to . src/resources/assets/js/"
   },
   "devDependencies": {
