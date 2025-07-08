@@ -18,7 +18,8 @@ class MetricsServiceProvider extends ServiceProvider
    */
     public function boot(Modules $modules, Router $router)
     {
-        $this->loadViewsFrom(__DIR__.'/resources/views', 'module');
+        $this->loadViewsFrom(__DIR__.'/resources/views', 'metrics');
+        $this->loadMigrationsFrom(__DIR__.'/Database/migrations');
 
         $router->group([
             'namespace' => 'Biigle\Modules\Metrics\Http\Controllers',
@@ -27,20 +28,20 @@ class MetricsServiceProvider extends ServiceProvider
             require __DIR__.'/Http/routes.php';
         });
 
-        $modules->register('module', [
+        $modules->register('metrics', [
             'viewMixins' => [
-                'dashboardMain',
+                'annotationsScripts',
             ],
             'controllerMixins' => [
                 //
             ],
             'apidoc' => [
-               //__DIR__.'/Http/Controllers/Api/',
+               __DIR__.'/Http/Controllers/',
             ],
         ]);
 
         $this->publishes([
-            __DIR__.'/public' => public_path('vendor/module'),
+            __DIR__.'/public' => public_path('vendor/metrics'),
         ], 'public');
     }
 
