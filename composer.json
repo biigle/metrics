@@ -18,5 +18,12 @@
       "psr-4": {
          "Biigle\\Modules\\Metrics\\": "src"
       }
+    },
+    "extra": {
+      "laravel": {
+          "providers": [
+              "Biigle\\Modules\\Metrics\\MetricsServiceProvider"
+          ]
+      }
     }
 }
