@@ -31,4 +31,34 @@ enum EventType: string
      * none of the LabelBOT suggestions were correct.
      */
     case LabelBotDismissed = 'labelbot_dismissed';
+
+    /**
+     * Get all LabelBOT event types.
+     *
+     * @return array<int, self>
+     */
+    public static function labelBotCases(): array
+    {
+        return [
+            self::LabelBotChoseLabel1,
+            self::LabelBotChoseLabel2,
+            self::LabelBotChoseLabel3,
+            self::LabelBotChoseLabelOther,
+            self::LabelBotDismissed,
+        ];
+    }
+
+    /**
+     * Get the human-readable event type label.
+     */
+    public function label(): string
+    {
+        return match ($this) {
+            self::LabelBotChoseLabel1 => 'Chose label 1',
+            self::LabelBotChoseLabel2 => 'Chose label 2',
+            self::LabelBotChoseLabel3 => 'Chose label 3',
+            self::LabelBotChoseLabelOther => 'Chose other label',
+            self::LabelBotDismissed => 'Dismissed',
+        };
+    }
 }
