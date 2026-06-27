@@ -42,9 +42,7 @@ class AdminControllerTest extends TestCase
             ->assertViewIs('metrics::admin')
             ->assertViewHas('labelBotEventTotal', 4)
             ->assertSeeText('LabelBOT Events')
-            ->assertSeeText('Chose label 1')
-            ->assertSeeText('Chose label 2')
-            ->assertSeeText('Dismissed');
+            ->assertDontSeeText('Event type');
 
         $data = $response->viewData('labelBotEventData');
 

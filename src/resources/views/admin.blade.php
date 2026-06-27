@@ -21,22 +21,6 @@
                 <p class="text-muted">No LabelBOT events have been collected yet.</p>
             @endif
         </div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Event type</th>
-                    <th class="text-right">Events</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($labelBotEventData as $event)
-                    <tr>
-                        <td>{{ $event['name'] }}</td>
-                        <td class="text-right">{{ number_format($event['value']) }}</td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
     </div>
 @endsection
 
