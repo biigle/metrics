@@ -1,4 +1,13 @@
 {
+  "src/resources/assets/js/admin.js": {
+    "file": "assets/admin-BJo2_l4b.js",
+    "name": "admin",
+    "src": "src/resources/assets/js/admin.js",
+    "isEntry": true,
+    "css": [
+      "assets/admin-D1K_-XJr.css"
+    ]
+  },
   "src/resources/assets/js/main.js": {
     "file": "assets/main-BdHLUdif.js",
     "name": "main",

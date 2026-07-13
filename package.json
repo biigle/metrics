@@ -18,5 +18,8 @@
     "vite": "^6.3.4",
     "vite-plugin-externalize-dependencies": "^1.0.1"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "echarts": "^6.1.0"
+  }
 }
