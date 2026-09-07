@@ -33,6 +33,16 @@ enum EventType: string
     case LabelBotDismissed = 'labelbot_dismissed';
 
     /**
+     * The user asked a question in the Ask BIIGLE chat.
+     */
+    case AskBiigleAskedQuestion = 'ask_biigle_asked_question';
+
+    /**
+     * The user reported an answer of the Ask BIIGLE chat as incorrect.
+     */
+    case AskBiigleReportedAnswer = 'ask_biigle_reported_answer';
+
+    /**
      * Get all LabelBOT event types.
      *
      * @return array<int, self>
@@ -49,6 +59,19 @@ enum EventType: string
     }
 
     /**
+     * Get all Ask BIIGLE event types.
+     *
+     * @return array<int, self>
+     */
+    public static function askBiigleCases(): array
+    {
+        return [
+            self::AskBiigleAskedQuestion,
+            self::AskBiigleReportedAnswer,
+        ];
+    }
+
+    /**
      * Get the human-readable event type label.
      */
     public function label(): string
@@ -59,6 +82,8 @@ enum EventType: string
             self::LabelBotChoseLabel3 => 'Chose label 3',
             self::LabelBotChoseLabelOther => 'Chose other label',
             self::LabelBotDismissed => 'Dismissed',
+            self::AskBiigleAskedQuestion => 'Asked a question',
+            self::AskBiigleReportedAnswer => 'Reported an incorrect answer',
         };
     }
 }
