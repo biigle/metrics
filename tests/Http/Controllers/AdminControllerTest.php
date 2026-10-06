@@ -24,7 +24,7 @@ class AdminControllerTest extends TestCase
     public function testIndex()
     {
         $admin = UserTest::create();
-        $admin->role()->associate(Role::admin());
+        $admin->role = Role::ADMIN;
 
         Event::factory()->count(2)->create([
             'type' => EventType::LabelBotChoseLabel1,
