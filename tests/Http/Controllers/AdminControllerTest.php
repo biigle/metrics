@@ -2,9 +2,9 @@
 
 namespace Biigle\Tests\Modules\Metrics\Http\Controllers;
 
+use Biigle\Enums\Role;
 use Biigle\Modules\Metrics\Enums\EventType;
 use Biigle\Modules\Metrics\Event;
-use Biigle\Role;
 use Biigle\Tests\UserTest;
 use TestCase;
 
