@@ -2,9 +2,9 @@
 
 namespace Biigle\Tests\Modules\Metrics\Http\Controllers;
 
+use Biigle\Enums\Role;
 use Biigle\Modules\Metrics\Enums\EventType;
 use Biigle\Modules\Metrics\Event;
-use Biigle\Role;
 use Biigle\Tests\UserTest;
 use TestCase;
 
@@ -24,7 +24,7 @@ class AdminControllerTest extends TestCase
     public function testIndex()
     {
         $admin = UserTest::create();
-        $admin->role()->associate(Role::admin());
+        $admin->role = Role::ADMIN;
 
         Event::factory()->count(2)->create([
             'type' => EventType::LabelBotChoseLabel1,
