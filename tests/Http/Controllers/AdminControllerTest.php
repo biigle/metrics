@@ -35,13 +35,22 @@ class AdminControllerTest extends TestCase
         Event::factory()->create([
             'type' => EventType::LabelBotDismissed,
         ]);
+        Event::factory()->count(3)->create([
+            'type' => EventType::AskBiigleAskedQuestion,
+        ]);
+        Event::factory()->create([
+            'type' => EventType::AskBiigleReportedAnswer,
+        ]);
 
         $response = $this
             ->actingAs($admin)
             ->get('admin/metrics')
             ->assertViewIs('metrics::admin')
             ->assertViewHas('labelBotEventTotal', 4)
+            ->assertViewHas('askBiigleEventTotal', 4)
             ->assertSeeText('LabelBOT Events')
+            ->assertSeeText('Ask BIIGLE Events')
+            ->assertSeeText('Asked a question')
             ->assertDontSeeText('Event type');
 
         $data = $response->viewData('labelBotEventData');
@@ -53,5 +62,10 @@ class AdminControllerTest extends TestCase
             ['name' => 'Chose other label', 'value' => 1],
             ['name' => 'Dismissed', 'value' => 1],
         ], $data);
+
+        $this->assertSame([
+            ['name' => 'Asked a question', 'value' => 3],
+            ['name' => 'Reported an incorrect answer', 'value' => 1],
+        ], $response->viewData('askBiigleEventData'));
     }
 }

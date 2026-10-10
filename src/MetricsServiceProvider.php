@@ -30,8 +30,8 @@ class MetricsServiceProvider extends ServiceProvider
 
         $modules->register('metrics', [
             'viewMixins' => [
-                'annotationsScripts',
                 'adminMenu',
+                'navbarMenuItem',
             ],
             'controllerMixins' => [
                 //
